@@ -16,11 +16,11 @@ class MessageData:
         '''
             Initializes the messaging
         '''
-        mongo_url = os.getenv("MONGO_URI")
-        self.client = MongoClient(mongo_url)
-        self.data_base = self.client["chat"]
-        self.messages_collection: Collection[ChatMessage] = self.data_base["messages"]
-        self.logger = Logger("MessagingData")
+        # mongo_url = os.getenv("MONGO_URI")
+        # self.client = MongoClient(mongo_url)
+        # self.data_base = self.client["chat"]
+        # self.messages_collection: Collection[ChatMessage] = self.data_base["messages"]
+        # self.logger = Logger("MessagingData")
 
     def add_message(self, message: ChatMessage):
         '''

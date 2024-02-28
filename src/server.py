@@ -12,6 +12,7 @@ from src.manager.messaging_manager import MessagingManager
 from src.logger.logger import Logger
 from src.data.rooms_data import RoomsData
 from src.data.messaging_data import MessageData
+from src.auth.security import router as security_router
 
 # Instance of the FastAPI app
 app = FastAPI()
@@ -112,3 +113,6 @@ async def handle_new_connection_rooms(websocket: WebSocket):
 
     except WebSocketDisconnect:
         await rooms_manager.remove_rooms_listner(websocket)
+
+
+app.include_router(security_router)

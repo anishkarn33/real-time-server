@@ -16,13 +16,13 @@ class RoomsData:
     def __init__(self):
         mongo_url = os.getenv("MONGO_URI")
         # use pymongo to connect to the database
-        self.client = MongoClient(mongo_url)
-        self.data_base = self.client["chat"]
-        self.rooms_collection: Collection[Room] = self.data_base["rooms"]
-        self.logger = Logger("RoomsData")
-        main_room = Room(name="General", description="General room")
+        # self.client = MongoClient(mongo_url)
+        # self.data_base = self.client["chat"]
+        # self.rooms_collection: Collection[Room] = self.data_base["rooms"]
+        # self.logger = Logger("RoomsData")
+        # main_room = Room(name="General", description="General room")
 
-        self.add_room(main_room)
+        # self.add_room(main_room)
 
     def add_room(self, room: Room) -> Room:
         '''
